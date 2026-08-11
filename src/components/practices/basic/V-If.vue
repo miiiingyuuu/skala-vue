@@ -1,5 +1,6 @@
 <script setup>
     import { ref } from 'vue'
+    
     // 1. 조건부 온/오프 스위치 변수
     const isLogged = ref(false)
     // 2. 다중 조건 분기용 숫자 변수

@@ -1,5 +1,6 @@
 <script setup>
     import { ref } from 'vue'
+    
     const dynamicUrl = 'https://www.naver.com'
     const logoImgSrc = 'https://vuejs.org/images/logo.png'
     const isButtonDisabled = ref(true)

@@ -1,8 +1,10 @@
 <script setup>
     import { ref } from 'vue'
+
     // 1. 객체 바인딩용 변수
     const textColor = ref('purple')
     const boxWidth = ref(150) // 숫자만 제어
+    
     // 2. 배열 바인딩용 스타일 객체 무더기
     const baseBoxStyle = ref({
     backgroundColor: '#42b883',

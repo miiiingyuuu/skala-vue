@@ -2,6 +2,7 @@
     import { ref } from 'vue'
 
     const fruits = ref(['사과', '바나나', '포도', '딸기'])
+    
     const user = ref({
         name: '홍길동',
         age: 30,
