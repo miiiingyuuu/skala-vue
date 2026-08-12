@@ -1,0 +1,94 @@
+<script setup>
+// 1. 추가 Directive - v-pre, v-cloak, v-once, v-memo
+import VPre from "./components/practices/basic/V-Pre.vue";
+import VCloak from "./components/practices/basic/V-Cloak.vue";
+import VOnce from "./components/practices/basic/V-Once.vue";
+import VMemo from "./components/practices/basic/V-Memo.vue";
+
+// 2. Event Handling - 이벤트 객체와 이벤트 수식어
+import VOnEventBasic from "./components/practices/basic/V-On-EventBasic.vue";
+import VOnEventObject from "./components/practices/basic/V-On-EventObject.vue";
+import VOnEventModifier from "./components/practices/basic/V-On-EventModifier.vue";
+
+// 3. Form Handling - v-model과 입력 수식어
+import VModelFormBasic from "./components/practices/basic/V-Model-FormBasic.vue";
+import VModelForm from "./components/practices/basic/V-Model-Form.vue";
+import VModelFormModifier from "./components/practices/basic/V-Model-FormModifier.vue";
+
+// 4. Component Style - scoped 스타일
+import StyleScoped from "./components/practices/basic/StyleScoped.vue";
+
+// 5. Composition API - ref, reactive, computed, watch, watchEffect
+import Ref from "./components/practices/composition/Reactive-Ref.vue";
+import Reactive from "./components/practices/composition/Reactive-Reactive.vue";
+import ComputedBasic from "./components/practices/composition/ComputedBasic.vue";
+import WatcherBasic from "./components/practices/composition/WatcherBasic.vue";
+import WatcherMulti from "./components/practices/composition/WatcherMultiSource.vue";
+import WatcherDeep from "./components/practices/composition/WatcherDeep.vue";
+import WatcherReactive from "./components/practices/composition/WatcherReactive.vue";
+import WatcherWatchEffect from "./components/practices/composition/Watcher-WatchEffect.vue";
+
+// 6. Exercise - 기본 날씨 목업과 Composition API 검색 과제
+import WeatherMockup from "./components/exercise/WeatherMockup.vue";
+import WeatherComposition from "./components/exercise/WeatherComposition.vue";
+
+// "practice" 또는 "exercise"로 변경해 실행할 화면을 선택합니다.
+const MODE = "practice";
+</script>
+
+<template>
+  <div v-if="MODE === 'practice'" class="practice-container">
+    <h1>Basic</h1>
+    <hr />
+
+    <h1>1. Additional Directives</h1>
+    <VPre />
+    <VCloak />
+    <VOnce />
+    <VMemo />
+
+    <h1>2. Vue Event Handling</h1>
+    <VOnEventBasic />
+    <VOnEventObject />
+    <VOnEventModifier />
+
+    <h1>3. Vue Form Handling</h1>
+    <VModelFormBasic />
+    <VModelForm />
+    <VModelFormModifier />
+
+    <h1>4. Vue Style Handling</h1>
+    <StyleScoped />
+
+    <h1>Composition</h1>
+    <hr />
+
+    <h1>1. Reactive State</h1>
+    <Ref />
+    <Reactive />
+
+    <h1>2. Computed & Watchers</h1>
+    <ComputedBasic />
+    <WatcherBasic />
+    <WatcherMulti />
+    <WatcherDeep />
+    <WatcherReactive />
+    <WatcherWatchEffect />
+  </div>
+
+  <div v-else-if="MODE === 'exercise'" class="day2-exercise-list">
+    <!-- 과제 1: Day1·Day2 기본 문법으로 만든 날씨 목업 -->
+    <div class="app-container">
+      <WeatherMockup />
+    </div>
+
+    <!-- 과제 2: computed, watch, watchEffect를 적용한 날씨 검색 -->
+    <div class="app-container">
+      <WeatherComposition />
+    </div>
+  </div>
+</template>
+
+<!-- 실습과 과제의 최상위 클래스가 달라 두 스타일의 적용 범위를 구분합니다. -->
+<style src="./assets/practice.css"></style>
+<style src="./assets/exercise.css"></style>

@@ -30,6 +30,11 @@ import WatcherMulti from "./components/practices/composition/WatcherMultiSource.
 import WatcherDeep from "./components/practices/composition/WatcherDeep.vue";
 import WatcherReactive from "./components/practices/composition/WatcherReactive.vue";
 import WatcherWatchEffect from "./components/practices/composition/Watcher-WatchEffect.vue";
+import LifecycleHookExample from "./components/practices/component/LifecycleHookExampleParent.vue";
+import PropsEmits from "./components/practices/component/PropsEmitsParent.vue";
+import SlotDefault from "./components/practices/component/SlotDefaultParent.vue";
+import SlotNamed from "./components/practices/component/SlotNamedParent.vue";
+import SlotScoped from "./components/practices/component/SlotScopedParent.vue";
 </script>
 
 <template>
@@ -84,6 +89,20 @@ import WatcherWatchEffect from "./components/practices/composition/Watcher-Watch
     <WatcherDeep />
     <WatcherReactive />
     <WatcherWatchEffect />
+
+    <h1>Component</h1>
+    <hr />
+
+    <h1>1. Lifecycle Hooks</h1>
+    <LifecycleHookExample />
+
+    <h1>2. Props & Emits</h1>
+    <PropsEmits />
+
+    <h1>3. Slots</h1>
+    <SlotDefault />
+    <SlotNamed />
+    <SlotScoped />
   </div>
 </template>
 

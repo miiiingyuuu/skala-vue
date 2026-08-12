@@ -1,0 +1,72 @@
+<script setup>
+// 1. Component - Lifecycle Hooks, Props & Emits, Slots
+import LifecycleHookExample from "./components/practices/component/LifecycleHookExampleParent.vue";
+import PropsEmits from "./components/practices/component/PropsEmitsParent.vue";
+import SlotDefault from "./components/practices/component/SlotDefaultParent.vue";
+import SlotNamed from "./components/practices/component/SlotNamedParent.vue";
+import SlotScoped from "./components/practices/component/SlotScopedParent.vue";
+
+// 2. Exercise - 컴포넌트 분리, Vue Router, Pinia
+import WeatherParent from "./components/exercise/WeatherParent.vue";
+import UnitToggler from "./components/exercise/UnitToggler.vue";
+
+// "practice" 또는 "exercise"로 변경해 실행할 화면을 선택합니다.
+const MODE = "practice";
+</script>
+
+<template>
+  <div v-if="MODE === 'practice'" class="practice-container">
+    <h1>Component</h1>
+    <hr />
+
+    <h1>1. Lifecycle Hooks</h1>
+    <LifecycleHookExample />
+
+    <h1>2. Props & Emits</h1>
+    <PropsEmits />
+
+    <h1>3. Slots</h1>
+    <SlotDefault />
+    <SlotNamed />
+    <SlotScoped />
+  </div>
+
+  <div v-else-if="MODE === 'exercise'" class="day3-exercise-list">
+    <!-- 과제 3: 기존 날씨 화면을 역할별 자식 컴포넌트로 분리 -->
+    <div class="app-container">
+      <WeatherParent />
+    </div>
+
+    <!-- 과제 4·5: Router 화면 이동과 Pinia 날씨 단위 전환 -->
+    <div class="app-container router-exercise">
+      <div class="router-title">
+        <p>과제 04 · 05</p>
+        <h1>🌤️ Router와 Pinia 날씨 서비스</h1>
+      </div>
+
+      <nav class="navigation-bar" aria-label="날씨 서비스 메뉴">
+        <div class="navigation-links">
+          <RouterLink :to="{ name: 'WeatherHome' }" class="nav-item">
+            🌤️ 날씨 대시보드
+          </RouterLink>
+          <span class="divider" aria-hidden="true"></span>
+          <RouterLink :to="{ name: 'WeatherAbout' }" class="nav-item">
+            ℹ️ 서비스 소개
+          </RouterLink>
+        </div>
+
+        <!-- Pinia configStore의 단위 상태를 변경하는 컴포넌트 -->
+        <UnitToggler />
+      </nav>
+
+      <!-- 현재 URL에 맞는 Home, Detail, About, NotFound View를 표시합니다. -->
+      <main class="router-content">
+        <RouterView />
+      </main>
+    </div>
+  </div>
+</template>
+
+<!-- 실습과 과제의 최상위 클래스가 달라 두 스타일의 적용 범위를 구분합니다. -->
+<style src="./assets/practice.css"></style>
+<style src="./assets/exercise.css"></style>
