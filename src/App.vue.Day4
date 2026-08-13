@@ -1,0 +1,44 @@
+<script setup>
+// 1. Axios - 외부 API 통신과 CRUD
+import AxiosWeather from "./components/library/AxiosWeather.vue";
+import AxiosJson from "./components/library/AxiosJson.vue";
+
+// 2. UI Library - Form, Data, System Feedback
+import ElementPlus from "./components/library/ElementPlus.vue";
+
+// 3. Exercise - OpenWeather와 외부 UI Library를 적용한 최종 날씨 앱
+import FinalWeatherHomeView from "./final/views/WeatherHomeView.vue";
+
+// "practice" 또는 "exercise"로 변경해 실행할 화면을 선택합니다.
+const MODE = "practice";
+</script>
+
+<template>
+  <div v-if="MODE === 'practice'" class="practice-container">
+    <h1>Axios & UI Library</h1>
+    <hr />
+
+    <h1>1. Axios API Communication</h1>
+    <!-- GET 요청과 loading/error/finally 상태 처리 -->
+    <AxiosWeather />
+
+    <h1>2. Axios CRUD</h1>
+    <!-- JSONPlaceholder를 이용한 GET, POST, PUT, DELETE 실습 -->
+    <AxiosJson />
+
+    <h1>3. Element Plus</h1>
+    <!-- Form, Data 입력, Message·Dialog·Progress 피드백 실습 -->
+    <ElementPlus />
+  </div>
+
+  <div v-else-if="MODE === 'exercise'" class="day4-exercise-list">
+    <!-- 과제 6 및 Final: OpenWeather, Pinia, Router, PrimeVue 통합 결과물 -->
+    <div class="final-mode">
+      <FinalWeatherHomeView />
+    </div>
+  </div>
+</template>
+
+<!-- 실습 화면과 최종 앱의 스타일 적용 범위를 분리합니다. -->
+<style src="./assets/practice.css"></style>
+<style src="./final/assets/final.css"></style>

@@ -17,4 +17,3 @@ export const useConfigStore = defineStore("config", () => {
 
   return { unit, unitSymbol, toggleUnit };
 });
- 

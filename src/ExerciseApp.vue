@@ -20,7 +20,7 @@ import UnitToggler from "./components/exercise/UnitToggler.vue";
 
   <div class="app-container router-exercise">
     <div class="router-title">
-      <p>과제 4, 5</p>
+      <p>과제 4, 5, 6</p>
       <h1>🌤️ Pinia 날씨 스토어</h1>
     </div>
 

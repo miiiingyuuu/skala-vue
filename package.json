@@ -2,10 +2,12 @@
   "name": "skala-vue1",
   "version": "0.0.0",
   "private": true,
+  "packageManager": "npm@12.0.1",
   "type": "module",
   "scripts": {
     "dev": "vite",
-    "build": "vite build",
+    "build": "vite build && cp dist/index.html dist/404.html",
+    "deploy": "npm run build && gh-pages -d dist",
     "preview": "vite preview",
     "lint": "run-s lint:*",
     "lint:oxlint": "oxlint . --fix",
@@ -13,7 +15,12 @@
     "format": "prettier --write --experimental-cli src/"
   },
   "dependencies": {
+    "@primeuix/themes": "^1.2.5",
+    "axios": "^1.19.0",
+    "element-plus": "^2.14.4",
     "pinia": "^3.0.4",
+    "primeicons": "^7.0.0",
+    "primevue": "^4.5.5",
     "vue": "^3.5.32",
     "vue-router": "^5.0.4"
   },
@@ -24,6 +31,7 @@
     "eslint-config-prettier": "^10.1.8",
     "eslint-plugin-oxlint": "~1.60.0",
     "eslint-plugin-vue": "~10.8.0",
+    "gh-pages": "^6.3.0",
     "globals": "^17.5.0",
     "npm-run-all2": "^8.0.4",
     "oxlint": "~1.60.0",
@@ -32,6 +40,6 @@
     "vite-plugin-vue-devtools": "^8.1.1"
   },
   "engines": {
-    "node": "^20.19.0 || >=22.12.0"
+    "node": "^20.19.0 || ^22.12.0 || >=24.0.0"
   }
 }

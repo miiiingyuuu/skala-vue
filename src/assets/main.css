@@ -6,8 +6,48 @@
   padding: 48px 24px 72px;
 }
 
+#app:has(.final-mode) {
+  padding: 0;
+}
+
+.project-mode-switch {
+  position: fixed;
+  z-index: 1000;
+  right: 18px;
+  bottom: 18px;
+  display: flex;
+  gap: 4px;
+  padding: 5px;
+  border: 1px solid rgb(255 255 255 / 32%);
+  border-radius: 999px;
+  background: rgb(15 23 42 / 72%);
+  box-shadow: 0 10px 32px rgb(15 23 42 / 20%);
+  backdrop-filter: blur(16px);
+}
+
+.project-mode-switch button {
+  padding: 8px 15px;
+  border: 0;
+  border-radius: 999px;
+  background: transparent;
+  color: rgb(255 255 255 / 72%);
+  cursor: pointer;
+  font-size: 0.8rem;
+  font-weight: 750;
+}
+
+.project-mode-switch button.active {
+  background: #fff;
+  color: #1d4ed8;
+}
+
 @media (max-width: 640px) {
   #app {
     padding: 24px 14px 48px;
+  }
+
+  .project-mode-switch {
+    right: 10px;
+    bottom: 10px;
   }
 }
