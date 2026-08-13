@@ -7,7 +7,7 @@ import FinalApp from "./FinalApp.vue";
 
 const route = useRoute();
 const router = useRouter();
-const MODE = "exercise";  // MODE를 excercise나 practice로 바꾸면 해당 모드로 전환됩니다.
+const MODE = "practice";  // MODE를 excercise나 practice로 바꾸면 해당 모드로 전환됩니다.
 const isFinalMode = computed(() => route.path.startsWith("/final"));
 
 function switchMode(mode) {
